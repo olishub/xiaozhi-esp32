@@ -28,10 +28,10 @@ jobs:
           esp_idf_version: release-v5.4
           # ESP32 variant to build for
           target: esp32s3
-          path: "."  # Путь к проекту (если не в корне)
+          # path: "."  # Путь к проекту (если не в корне)
           # Command to run inside the docker container (default: builds the project)
-          # command: # optional, default is idf.py build
-      - run: idf.py build
+          command: idf.py build
+      # - run: idf.py build
       - uses: actions/upload-artifact@v4
         with:
           name: firmware
