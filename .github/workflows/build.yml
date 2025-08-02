@@ -30,4 +30,8 @@ jobs:
           target: esp32s3
           # Command to run inside the docker container (default: builds the project)
           # command: # optional, default is idf.py build
-                
+      - run: idf.py build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build/*.bin                
